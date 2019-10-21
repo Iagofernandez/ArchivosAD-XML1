@@ -25,7 +25,45 @@ public class XMLproba0 {
         //invocando al método createXMLStreamWriter (); del objeto OutputStream craedo anteriormente
         XMLStreamWriter factory2 = factory.createXMLStreamWriter (ficheroesc);
 
-       
+        //Declaracion de XML con versión especifica.
+        factory2.writeStartDocument("1.0");
+        
+        
+        
+        //writeStartElement--> escribe tag de inicio de un elemento
+        //writeAttribute--> escribe un atributo para el elemento actual
+        //writeCharacters--> escribe el contendio del elemento
+        //writeEndElement--> escribe tag de cierre del elemento actual
+        //writeEndDocument--> cierra el documento
+        factory2.writeStartElement("autores");
+        factory2.writeStartElement("autor");
+        factory2.writeAttribute("codigo", "a1");
+        factory2.writeStartElement("nome");
+        factory2.writeCharacters("Alejandro Dumas");
+        factory2.writeEndElement();
+        factory2.writeStartElement("titulo");
+        factory2.writeCharacters("El conde de Montecristo");
+        factory2.writeEndElement();
+        factory2.writeStartElement("titulo");
+        factory2.writeCharacters("Los miserables");
+        factory2.writeEndElement();
+        factory2.writeEndElement();
+        factory2.writeStartElement("autor");
+        factory2.writeAttribute("codigo2", "a2");
+        factory2.writeStartElement("nome");
+        factory2.writeCharacters("Fiodor Dostoyesvski");
+        factory2.writeEndElement();
+        factory2.writeStartElement("titulo");
+        factory2.writeCharacters("El idiota");
+        factory2.writeEndElement();
+        factory2.writeStartElement("titulo");
+        factory2.writeCharacters("noches blancas");
+        factory2.writeEndElement();
+        factory2.writeEndElement();
+        factory2.writeEndElement();
+        factory2.writeEndDocument();
+      
+        factory2.close();
     }
     
 }
